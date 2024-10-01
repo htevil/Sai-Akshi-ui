@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Sai-Akshi-ui/static/css/main.708c4ece.css",
+    "main.js": "/Sai-Akshi-ui/static/js/main.e99456de.js",
+    "static/js/453.56a02543.chunk.js": "/Sai-Akshi-ui/static/js/453.56a02543.chunk.js",
+    "static/media/desktop.jpg": "/Sai-Akshi-ui/static/media/desktop.d8a3d61fe7276ffad2f9.jpg",
+    "static/media/elevation.jpg": "/Sai-Akshi-ui/static/media/elevation.032a03cc96227a66507c.jpg",
+    "static/media/plan3.jpg": "/Sai-Akshi-ui/static/media/plan3.b0097d90c1fc45244c0a.jpg",
+    "static/media/plan4.jpg": "/Sai-Akshi-ui/static/media/plan4.cd044f6200c5cc7020ed.jpg",
+    "static/media/plan2.jpg": "/Sai-Akshi-ui/static/media/plan2.9a95c731bbd53328b39c.jpg",
+    "static/media/plan1.jpg": "/Sai-Akshi-ui/static/media/plan1.f84c96c8ef771fd15126.jpg",
+    "static/media/location.jpg": "/Sai-Akshi-ui/static/media/location.dc71b8cd5600e9cd4fe6.jpg",
+    "static/media/maharera.png": "/Sai-Akshi-ui/static/media/maharera.aab96301ad0117f5040f.png",
+    "static/media/logo.png": "/Sai-Akshi-ui/static/media/logo.47658c5f95b2f6c37520.png",
+    "static/media/uvk-logo.png": "/Sai-Akshi-ui/static/media/uvk-logo.7b6540f6855229675bf9.png",
+    "static/media/next.svg": "/Sai-Akshi-ui/static/media/next.c9eba6411e275be8754009c1d2983f3f.svg",
+    "static/media/prev.svg": "/Sai-Akshi-ui/static/media/prev.6a003fdc2ffc6e2478fa7395ffbb1e36.svg",
+    "index.html": "/Sai-Akshi-ui/index.html",
+    "main.708c4ece.css.map": "/Sai-Akshi-ui/static/css/main.708c4ece.css.map",
+    "main.e99456de.js.map": "/Sai-Akshi-ui/static/js/main.e99456de.js.map",
+    "453.56a02543.chunk.js.map": "/Sai-Akshi-ui/static/js/453.56a02543.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.708c4ece.css",
+    "static/js/main.e99456de.js"
+  ]
+}
