@@ -11,7 +11,7 @@ export default function Section4() {
                     className="walk_iframe"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                    style={{ width: "1000px", height: "580px" }}>
+                    style={{ width:"800px", height:"450px"}}>
                 </iframe>
             </div>
         </div>

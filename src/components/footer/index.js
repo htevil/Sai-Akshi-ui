@@ -1,30 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Disclaimer from '../Modal/Disclaimer';
+import ReraDisclaimer from '../Modal/ReraDisclaimer';
 
 export default function Footer() {
+    const [openDisclaimer1, setOpenDisclaimer1] = useState(false);
+    const [openDisclaimer2, setOpenDisclaimer2] = useState(false);
+
     return (
-        <div className="container-fluid" id="footersection">
-            <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 footermain">
-                    <span>
-                        All rights are reserved | Copyright © 2024 Sai Akshi | 
-                        <span 
-                            className="reradisclaimerbtn" 
-                            data-toggle="modal" 
-                            data-target="#rera-modal"
-                        >
-                            RERA Disclaimer
-                        </span> | 
-                        <span 
-                            className="reradisclaimerbtn" 
-                            data-toggle="modal" 
-                            data-target="#disc-modal"
-                        >
-                            Disclaimer
-                        </span>
-                    </span>
-                    {/* <span className="bn_key_span">Powered By <a href="https://www.brandniti.com"><img src="images/bn_key.png" className="bn_key" alt="" /></a></span> */}
-                </div>
+        <div className="footer" style={{ fontSize: "14px", padding: "12px 0px" }}>
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "5px" }}>
+                <span>All rights are reserved</span> <span>|</span>
+                <span>Copyright © 2024 Sai Akshi</span> <span>|</span>
+                <button onClick={() => setOpenDisclaimer1(true)} style={{backgroundColor:"transparent", border:"none", color:"blue", padding:"0px", margin:"0px",alignSelf:"self-end"}}>RERA Disclaimer</button> <span>|</span>
+                <button onClick={() => setOpenDisclaimer2(true)} style={{backgroundColor:"transparent", border:"none", color:"blue",padding:"0px", margin:"0px",alignSelf:"self-end" }} >Disclaimer</button>
+                {/* <span className="bn_key_span">Powered By <a href="https://www.brandniti.com"><img src="images/bn_key.png" className="bn_key" alt="" /></a></span> */}
             </div>
+            {openDisclaimer1 && <ReraDisclaimer closeDisclaimer1={setOpenDisclaimer1} />}
+            {openDisclaimer2 && <Disclaimer  closeDisclaimer2={setOpenDisclaimer2} />}
         </div>
     );
 }

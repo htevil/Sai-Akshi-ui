@@ -31,7 +31,7 @@ export default function Section2() {
     ];
 
     return (
-        <div className="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px" }}>
+        <div className="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px 40px" }}>
             <h1 className="s2-heading" style={{fontSize:"28px", marginBottom:"20px"}}>Amenities</h1>
             <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridColumnGap: "20px", gridRowGap: "40px",padding: "20px 150px 0px " }}>
                 {
