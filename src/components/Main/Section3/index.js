@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import plan1 from "../../../asset/plan1.jpg";
-import plan2 from "../../../asset/plan2.jpg";
-import plan3 from "../../../asset/plan3.jpg";
-import plan4 from "../../../asset/plan4.jpg";
+import Plan1 from "../../../asset/plan1.jpg";
+import Plan2 from "../../../asset/plan2.jpg";
+import Plan3 from "../../../asset/plan3.jpg";
+import Plan4 from "../../../asset/plan4.jpg";
 import next from "../../../asset/next.svg";
 import prev from "../../../asset/prev.svg";
 
 export default function Plans() {
-    const images = [plan1, plan2, plan3, plan4];
-    const [currentIndex, setCurrentIndex] = useState(1)
+    const images = [Plan1, Plan2, Plan3, Plan4];
+    const [currentIndex, setCurrentIndex] = useState(1);
     const showImages = 3;
-    const autoSlideInterval = 5000; 
+    const autoSlideInterval = 5000;
 
     const getCurrentSlice = () => {
         const firstPart = images.slice(currentIndex, currentIndex + showImages);
@@ -33,66 +33,72 @@ export default function Plans() {
         return () => clearInterval(intervalId);
     }, []);
 
+    const getImageName = (imagePath) => {
+        return imagePath.split("/").pop().split(".")[0]; // Extract image name from the path
+    };
+
     return (
-        <div 
-            className="Plan" 
-            style={{ 
-                width: "100%", 
-                maxWidth: "1560px", 
-                display: "flex", 
-                flexDirection: "column", 
-                justifyContent: "center", 
-                alignItems: "center", 
-                margin: "20px 0px" 
+        <div id='Plans'
+            style={{
+                width: "100%",
+                maxWidth: "1560px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                paddingBottom: "20px",
+                backgroundColor:"#D9EDBF"
             }}
         >
-            <h1 className="s3-heading" style={{ fontSize: "28px", marginBottom: "40px" }}>Plans</h1>
-            
-            <div 
-                className="plans" 
-                style={{ 
-                    display: "flex", 
-                    justifyContent: "center", 
-                    alignItems: "center", 
-                    gap: "20px", 
-                    marginBottom: "20px" 
+            <h3 style={{ fontSize: "32px", marginBottom: "20px", color:"#FF9800" }}>
+                Our Plans
+            </h3>
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "20px",
+                    marginBottom: "20px"
                 }}
             >
-                {getCurrentSlice().map((image, index) => (
-                    <img 
-                        src={image} 
-                        className="plan_img" 
-                        alt={`plan_${index}`} 
-                        style={{ 
-                            width: "100%", 
-                            maxWidth: "450px", 
-                            border: "2px solid grey" 
-                        }} 
-                        key={index}
-                    />
+                {getCurrentSlice().map((imageName, index) => (
+                    <div key={index} style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center",gap:"5px" }}>
+                        <img
+                            src={imageName}
+                            alt={`plan_${index}`}
+                            style={{
+                                width: "100%",
+                                maxWidth: "440px",
+                                borderRadius:"8px",
+                                border:"3.5px solid #2C7865"
+                            }}
+                        />
+                        <span style={{color:"white", padding:"6px 32px 8px 32px", backgroundColor:"#90D26D", borderRadius:"8px",color:"#2C7865",fontSize:"18px", fontWeight:"600"}}>{getImageName(imageName)}</span> {/* Display the image file name */}
+                    </div>
                 ))}
             </div>
-            
-            <div 
-                style={{ 
-                    display: "flex", 
-                    justifyContent: "center", 
-                    alignItems: "center", 
-                    gap: "200px", 
-                    margin: "20px" 
+
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "200px",
+                    marginTop:"10px"
                 }}
             >
-                <button 
-                    type="button" 
-                    onClick={handleLeftClick} 
+                <button
+                    type="button"
+                    onClick={handleLeftClick}
                     style={{ backgroundColor: "transparent", border: "none" }}
                 >
                     <img src={prev} alt="Previous" style={{ width: "35px" }} />
                 </button>
-                
-                <button 
-                    type="button" 
-                    onClick={handleRightClick} 
+
+                <button
+                    type="button"
+                    onClick={handleRightClick}
                     style={{ backgroundColor: "transparent", border: "none" }}
                 >
                     <img src={next} alt="Next" style={{ width: "35px" }} />

@@ -31,12 +31,12 @@ export default function Section2() {
     ];
 
     return (
-        <div className="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px 40px" }}>
-            <h1 className="s2-heading" style={{fontSize:"28px", marginBottom:"20px"}}>Amenities</h1>
-            <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridColumnGap: "20px", gridRowGap: "40px",padding: "20px 150px 0px " }}>
+        <div id="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <h1 className="s2-heading" style={{fontSize:"32px", color:"#2C7865"}}>Amenities</h1>
+            <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridColumnGap: "20px", gridRowGap: "40px",padding: "20px 150px" }}>
                 {
                     value.map((item, index) => (
-                        <div key={index} style={{ padding: "10px", border: "1px solid #ddd", borderRadius: "8px", textAlign:"center" }}>
+                        <div key={index} style={{ padding: "20px", border: "1px solid #ddd", borderRadius: "8px", textAlign:"center", fontSize:"16px", backgroundColor:"#FF9800",color:"white" }}>
                             {item}
                         </div>
                     ))
