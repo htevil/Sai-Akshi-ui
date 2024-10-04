@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Sai-Akshi-ui/static/css/main.b8695f65.css",
-    "main.js": "/Sai-Akshi-ui/static/js/main.fdca8f4a.js",
+    "main.js": "/Sai-Akshi-ui/static/js/main.3a02b245.js",
     "static/js/453.56a02543.chunk.js": "/Sai-Akshi-ui/static/js/453.56a02543.chunk.js",
     "static/media/desktop.jpg": "/Sai-Akshi-ui/static/media/desktop.d8a3d61fe7276ffad2f9.jpg",
     "static/media/elevation.jpg": "/Sai-Akshi-ui/static/media/elevation.032a03cc96227a66507c.jpg",
@@ -18,11 +18,11 @@
     "static/media/prev.svg": "/Sai-Akshi-ui/static/media/prev.6a003fdc2ffc6e2478fa7395ffbb1e36.svg",
     "index.html": "/Sai-Akshi-ui/index.html",
     "main.b8695f65.css.map": "/Sai-Akshi-ui/static/css/main.b8695f65.css.map",
-    "main.fdca8f4a.js.map": "/Sai-Akshi-ui/static/js/main.fdca8f4a.js.map",
+    "main.3a02b245.js.map": "/Sai-Akshi-ui/static/js/main.3a02b245.js.map",
     "453.56a02543.chunk.js.map": "/Sai-Akshi-ui/static/js/453.56a02543.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b8695f65.css",
-    "static/js/main.fdca8f4a.js"
+    "static/js/main.3a02b245.js"
   ]
 }
