@@ -7,7 +7,7 @@ export default function Footer() {
     const [openDisclaimer2, setOpenDisclaimer2] = useState(false);
 
     return (
-        <div className="footer" style={{ fontSize: "14px", padding: "12px 0px" }}>
+        <div className="footer" style={{ fontSize: "14px", padding: "5px 0px" }}>
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "5px" }}>
                 <span>All rights are reserved</span> <span>|</span>
                 <span>Copyright © 2024 Sai Akshi</span> <span>|</span>

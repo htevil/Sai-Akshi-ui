@@ -7,10 +7,10 @@ export default function Header() {
     const [openEnquireNow, setOpenEnquireNow] = useState(false);
 
     return (
-        <div className="header" style={{ width: "100%", maxWidth: "1560px", marginBottom: "20px" }}>
+        <div className="header" style={{ width: "100%", height:"fit-content", maxWidth: "1560px",display:"flex", justifyContent:"center", alignItems:"center"}}>
             <Navbar />
-            <div style={{ width: "100%" }}>
-                <img src={desktop} alt="no_desktop" style={{ width: "100%" }} />
+            <div style={{ width: "100%",  height:"fit-content", margin:"60px 0px 20px" }}>
+                <img src={desktop} alt="no_desktop" style={{ width: "100%", height:"fit-content" }} />
             </div>
             {
                !openEnquireNow &&              

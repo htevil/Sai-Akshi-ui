@@ -3,7 +3,7 @@ export default function EnquireNow({ closeEnquireNow }) {
     return (
         <div className="EnquireNow" style={{ width: "16%",position: "fixed",right: "0.5%",top: "45%",display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "15px", backgroundColor:"#FF9800", index:"15px", border:"2px solid black", borderRadius:"6px" }}>
             <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center",marginBottom:"10px" }}>
-                <span style={{ width: "70%", fontSize:"18px", fontWeight:"500", display: "flex", justifyContent: "flex-end", alignItems: "center"  }}>Enquire Now</span>
+                <span style={{ width: "70%", fontSize:"18px",display: "flex", justifyContent: "flex-end", alignItems: "center", color:"", fontWeight:"700" }}>Enquire Now</span>
                 <span style={{ width: "30%", display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
                     <button onClick={() => closeEnquireNow(false)} style={{backgroundColor:"transparent", border:"none"}}><img src={close} alt="no_close" style={{width:"16px"}}/></button>
                 </span>
@@ -18,7 +18,7 @@ export default function EnquireNow({ closeEnquireNow }) {
                     <option value="2 BHK">2 BHK</option>
                     <option value="3 BHK">3 BHK</option>
                 </select>
-                <input type="button" name="submit" value="Submit" style={{ padding:"6px 12px", borderRadius:"6px", border:"none" }}  />
+                <input type="button" name="submit" value="Submit" style={{ padding:"6px 12px", borderRadius:"6px", border:"none"}}  />
             </form>
             <span style={{ fontSize: "12px", textAlign: "center"}}>
                 By submitting details, I agree and authorize Sai Akshi to contact me. This will override the registry with DNC/NDNC.
