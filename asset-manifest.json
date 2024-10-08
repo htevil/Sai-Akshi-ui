@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Sai-Akshi-ui/static/css/main.b8695f65.css",
-    "main.js": "/Sai-Akshi-ui/static/js/main.3a02b245.js",
+    "main.css": "/Sai-Akshi-ui/static/css/main.8ab98822.css",
+    "main.js": "/Sai-Akshi-ui/static/js/main.a665f871.js",
     "static/js/453.56a02543.chunk.js": "/Sai-Akshi-ui/static/js/453.56a02543.chunk.js",
     "static/media/desktop.jpg": "/Sai-Akshi-ui/static/media/desktop.d8a3d61fe7276ffad2f9.jpg",
     "static/media/elevation.jpg": "/Sai-Akshi-ui/static/media/elevation.032a03cc96227a66507c.jpg",
@@ -14,15 +14,19 @@
     "static/media/maharera.png": "/Sai-Akshi-ui/static/media/maharera.aab96301ad0117f5040f.png",
     "static/media/logo.png": "/Sai-Akshi-ui/static/media/logo.47658c5f95b2f6c37520.png",
     "static/media/uvk-logo.png": "/Sai-Akshi-ui/static/media/uvk-logo.7b6540f6855229675bf9.png",
+    "static/media/slick.svg": "/Sai-Akshi-ui/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Sai-Akshi-ui/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Sai-Akshi-ui/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Sai-Akshi-ui/static/media/slick.295183786cd8a1389865.woff",
     "static/media/next.svg": "/Sai-Akshi-ui/static/media/next.c9eba6411e275be8754009c1d2983f3f.svg",
     "static/media/prev.svg": "/Sai-Akshi-ui/static/media/prev.6a003fdc2ffc6e2478fa7395ffbb1e36.svg",
     "index.html": "/Sai-Akshi-ui/index.html",
-    "main.b8695f65.css.map": "/Sai-Akshi-ui/static/css/main.b8695f65.css.map",
-    "main.3a02b245.js.map": "/Sai-Akshi-ui/static/js/main.3a02b245.js.map",
+    "main.8ab98822.css.map": "/Sai-Akshi-ui/static/css/main.8ab98822.css.map",
+    "main.a665f871.js.map": "/Sai-Akshi-ui/static/js/main.a665f871.js.map",
     "453.56a02543.chunk.js.map": "/Sai-Akshi-ui/static/js/453.56a02543.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8695f65.css",
-    "static/js/main.3a02b245.js"
+    "static/css/main.8ab98822.css",
+    "static/js/main.a665f871.js"
   ]
 }
