@@ -3,13 +3,16 @@ import React from 'react';
 
 export default function Section5() {
     return (
-        <div id="Location-Advantages" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-            <h1 className="s5-heading" style={{ fontSize: "32px", color: "#2C7865" }}>Location Advantages</h1>
-            <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "40px", padding: "0px 140px 20px 140px" }}>
-                <div style={{ width: "70%" }} >
-                    <img src={location} alt="no-location" style={{ width: "100%", border: "none", borderRadius: "4px", animation:"m1 linear", animationTimeline:"view()", animationRange:"entry 0%" }} />
+        <div className="view" id="Location-Advantages" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
+            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 10% cover"}}>
+                <h1 className="heading" style={{ fontSize: "32px", color: "#2C7865" }}>Location Advantages</h1>
+            </div>
+
+            <div className="down-part" style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "40px", padding: "0px 140px 20px 140px" }}>
+                <div className="main-left" style={{ width: "70%" }} >
+                    <img src={location} alt="no-location" style={{ width: "100%", border: "none", borderRadius: "4px", animation: "m1 linear", animationTimeline: "view()", animationRange: "entry 0%" }} />
                 </div>
-                <div style={{ fontSize: "16px", letterSpacing: "0.5px", lineHeight: "1.5", color: "#2C7865", animation:"m2 linear", animationTimeline:"view()", animationRange:"entry 0%" }}>
+                <div className="main-right" style={{ fontSize: "16px", letterSpacing: "0.5px", lineHeight: "1.5", color: "#2C7865", animation: "m2 linear", animationTimeline: "view()", animationRange: "entry 0%" }}>
                     <p>
                         The project has easy access to public transport. The locality houses all the required basic necessities like banks, ATMs, malls, grocers, schools, hospitals, temples, mosques, etc.
                     </p>
@@ -18,7 +21,6 @@ export default function Section5() {
                             {`
                             ul li::marker {
                                 color: #FF9800;
-                                
                             }
                             `}
                         </style>

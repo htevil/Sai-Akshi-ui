@@ -31,12 +31,14 @@ export default function Section2() {
     ];
 
     return (
-        <div className="S2" id="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-            <h1 className="s2-heading" style={{fontSize:"32px", color:"#2C7865",  animation:"h1 linear", animationTimeline:"view()", animationRange:"entry 0%"}}>Amenities</h1>
-            <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridColumnGap: "20px", gridRowGap: "60px",padding: "20px 140px" }}>
+        <div className="view" id="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginBottom: "50px" }}>
+            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 0%" }}>
+                <h1 className="heading" style={{ fontSize: "32px", color: "#2C7865" }}>Amenities</h1>
+            </div>
+            <div className="down-part" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridColumnGap: "20px", gridRowGap: "60px", padding: "20px 140px" }}>
                 {
                     value.map((item, index) => (
-                        <div className="block" key={index} style={{ padding: "20px", border: "1px solid #ddd", borderRadius: "8px", textAlign:"center", fontSize:"16px", backgroundColor:"#FF9800",color:"white", animation:"m3 linear", animationTimeline:"view()", animationRange:"entry 0%" }}>
+                        <div className="block" key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "25px", border: "1px solid #ddd", borderRadius: "8px", fontSize: "16px", backgroundColor: "#FF9800", color: "white", animation: "m3 linear", animationTimeline: "view()", animationRange: "entry 0% cover" }}>
                             {item}
                         </div>
                     ))
