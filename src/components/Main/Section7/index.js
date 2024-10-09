@@ -1,23 +1,35 @@
 import React from 'react';
+import { useState, useEffect } from "react";
 import gps1 from "../../../asset/gps1.png";
 import qr from "../../../asset/qr.jpg";
 import maharera from "../../../asset/maharera.png";
 import bg from "../../../asset/bg.jpg"
 
 export default function Section7() {
+    const [isLargerThan1024, setIsLargerThan1024] = useState(window.innerWidth > 1025);
+
+    const handleResize = () => {
+        setIsLargerThan1024(window.innerWidth > 1025);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {window.removeEventListener('resize', handleResize);};
+    }, []);
+
     return (
-        <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#D9EDBF", backgroundImage: `url(${bg})`, backgroundSize: "cover" }}>
-            <div id="Enquire-Now" style={{ width: "100%", height: "580px", maxWidth: "1560px", display: "flex", justifyContent: "center", alignItems: "center", gap: "40px" }}>
+        <div style={{ width: "100%", height: isLargerThan1024 ? "" :'800px', display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#D9EDBF", backgroundImage: `url(${bg})`, backgroundSize: "cover" }}>
+            <div id="Enquire-Now" style={{ width: "100%", height: "580px", maxWidth: "1560px", display: "flex", flexDirection: isLargerThan1024 ? "row": "column", justifyContent: "center", alignItems: "center", gap: isLargerThan1024 ? "40px" : "20px" }}>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.316096398398!2d72.92622697411656!3d19.14631054976364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b954c8aae4bd%3A0x9718ae424bb9f34a!2sSAI%20AKSHI!5e1!3m2!1sen!2sin!4v1727162570690!5m2!1sen!2sin"
                     className="maps_iframe"
-                    style={{ border: '0', width: "580px", height: "480px", borderRadius: "2px",animation:"m1 linear", animationTimeline:"view()", animationRange:"entry 0%" }}
+                    style={{ border: '0', width: isLargerThan1024 ? "35%" : "60%", height: isLargerThan1024 ? "85%" : "50%", borderRadius: "2px",animation:"m1 linear", animationTimeline:"view()", animationRange:"entry 0%" }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Sai Akshi Location Map"
                 ></iframe>
-                <div style={{ width: "33.19%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "12px", border: "2px solid #FF9800", padding: "20px 30px", animation:"m2 linear", animationTimeline:"view()", animationRange:"entry 0%"}} >
+                <div style={{ width: isLargerThan1024 ? "30%" : "40%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "12px", border: "2px solid #FF9800", padding: "20px 30px", animation:"m2 linear", animationTimeline:"view()", animationRange:"entry 0%"}} >
                     <div style={{ display: "flex", textAlign: "center", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "20px", marginBottom: "15px" }}>
                         <span style={{ fontSize: "24px", fontWeight: "600", color: "#FF9800" }}>Enquire Now</span>
                         <span style={{ fontSize: "16px", fontWeight: "400", color: "white" }}>Please fill your details below</span>

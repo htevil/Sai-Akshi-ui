@@ -84,11 +84,19 @@ code {
 
 @keyframes m3 {
   0% {
-    scale: 0.7;
-    transform: translateY(60px);
+    opacity: 0.2;
+    scale: 0.9;
+    transform: translateY(40px);
+  }
+
+  50% {
+    opacity: 0.6;
+    scale: 0.95;
+    transform: translateY(-20px);
   }
 
   100% {
+    opacity: 1;
     scale: 1;
     transform: translateY(0px);
   }
@@ -136,7 +144,18 @@ code {
 }
 
 
+@media (min-width: 1025px) {
+  body {
+      font-size: 16px;
+  }
 
+
+}
+
+
+.navbar {
+  padding: 8px 20px 10px 20px;
+}
 
 
 

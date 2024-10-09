@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState} from "react";
 import close from "../../../asset/close.png";
 
 export default function EnquireNow({ closeEnquireNow }) {
     const [closeUpdate, setCloseUpdate] = useState(false);
-
     const handleEnquireNow = () => {
         setCloseUpdate(true); // Start closing animation
         setTimeout(() => {
@@ -12,25 +11,7 @@ export default function EnquireNow({ closeEnquireNow }) {
     };
 
     return (
-        <div
-            className={`EnquireNow ${closeUpdate ? 's2' : 's1'}`}
-            style={{
-                width: "16%",
-                position: "fixed",
-                right: "0.5%",
-                top: "45%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "15px",
-                backgroundColor: "#FF9800",
-                zIndex: 15,
-                border: "2px solid black",
-                borderRadius: "6px",
-                animation: closeUpdate ? "s2 0.5s ease-in-out" : "s1 0.5s ease-in",
-            }}
-        >
+        <div className={`EnquireNow ${closeUpdate ? 's2' : 's1'}`} style={{ width: "100%",maxWidth:"260px", position: "fixed", right: "0.5%", top: "45%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "20px", backgroundColor: "#FF9800", zIndex: 15, border: "2px solid black", borderRadius: "6px", animation: closeUpdate ? "s2 0.5s ease-in-out" : "s1 0.5s ease-in",}}> 
             <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "10px" }}>
                 <span style={{ width: "70%", fontSize: "18px", display: "flex", justifyContent: "flex-end", alignItems: "center", fontWeight: "700" }}>Enquire Now</span>
                 <span style={{ width: "30%", display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
