@@ -7,18 +7,19 @@ import closemenubtn from "../../asset/close1.png";
 export default function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isLargerThan1024, setIsLargerThan1024] = useState(true);
+  const [isLargerThan1024, setIsLargerThan1024] = useState(window.innerWidth > 1024);
 
   // Function to toggle the sidebar
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+    
   };
 
   // Function to check if the screen size is mobile (below 1024px)
   const handleResize = () => {
+    setIsLargerThan1024(window.innerWidth > 1024);
     if (window.innerWidth < 1025) {
       setIsMobile(true);
-      setIsLargerThan1024(false);
     } else {
       setIsMobile(false);
       setSidebarOpen(false); // Close sidebar when resizing to larger screens
@@ -64,13 +65,13 @@ export default function Navbar() {
           <button
             className="logo-button"
             onClick={() => (window.location.href = "/")}
-            style={{ backgroundColor: "transparent", border: "none" }}
+            style={{ backgroundColor: "transparent", border: "none", padding:"0px" }}
           >
             <img
               src={logo}
               className="logos"
               alt="no_logo"
-              style={{ width: "120px", backgroundColor: "transparent" }}
+              style={{  width:isLargerThan1024? "100%" : "75%", maxWidth: "120px", backgroundColor: "transparent" }}
             />
           </button>
 
@@ -79,7 +80,7 @@ export default function Navbar() {
             <div
               className="img-container"
               style={{
-                width: "50px",
+                width: "40px",
                 cursor: "pointer",
               }}
               onClick={toggleSidebar}
@@ -107,12 +108,12 @@ export default function Navbar() {
                 textDecoration: "none",
               }}
             >
-              <a href="#Overview" style={{ textDecoration: "none", color: "#2C7865" }}>Overview</a><span className="menu_sp"> | </span>
-              <a href="#Amenities" style={{ textDecoration: "none", color: "#2C7865" }}>Amenities</a><span className="menu_sp"> | </span>
-              <a href="#Plans" style={{ textDecoration: "none", color: "#2C7865" }}>Plans</a><span className="menu_sp"> | </span>
-              <a href="#Walkthrough" style={{ textDecoration: "none", color: "#2C7865" }}>Walkthrough</a><span className="menu_sp"> | </span>
-              <a href="#Location-Advantages" style={{ textDecoration: "none", color: "#2C7865" }}>Location Advantages</a><span className="menu_sp"> | </span>
-              <a href="#Enquire-Now" style={{ textDecoration: "none", color: "#2C7865" }}>Enquire Now</a>
+              <a href="#Overview">Overview</a><span className="menu_sp"> | </span>
+              <a href="#Amenities">Amenities</a><span className="menu_sp"> | </span>
+              <a href="#Plans">Plans</a><span className="menu_sp"> | </span>
+              <a href="#Walkthrough" >Walkthrough</a><span className="menu_sp"> | </span>
+              <a href="#Location-Advantages">Location Advantages</a><span className="menu_sp"> | </span>
+              <a href="#Enquire-Now">Enquire Now</a>
             </div>
           )}
         </div>
@@ -164,12 +165,12 @@ export default function Navbar() {
                 gap: "40px",
               }}
             >
-              <a href="#Overview" style={{ textDecoration: "none", color: "#2C7865" }}>Overview</a>
-              <a href="#Amenities" style={{ textDecoration: "none", color: "#2C7865" }}>Amenities</a>
-              <a href="#Plans" style={{ textDecoration: "none", color: "#2C7865" }}>Plans</a>
-              <a href="#Walkthrough" style={{ textDecoration: "none", color: "#2C7865" }}>Walkthrough</a>
-              <a href="#Location-Advantages" style={{ textDecoration: "none", color: "#2C7865" }}>Location Advantages</a>
-              <a href="#Enquire-Now" style={{ textDecoration: "none", color: "#2C7865" }}>Enquire Now</a>
+              <a href="#Overview">Overview</a>
+              <a href="#Amenities">Amenities</a>
+              <a href="#Plans">Plans</a>
+              <a href="#Walkthrough">Walkthrough</a>
+              <a href="#Location-Advantages">Location Advantages</a>
+              <a href="#Enquire-Now">Enquire Now</a>
             </nav>
           </div>
         </>

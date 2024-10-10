@@ -1,14 +1,30 @@
+import React from 'react';
+import { useState, useEffect } from "react";
+
+
 export default function ReraDisclaimer({ closeDisclaimer1 }) {
+    const [isSmallThan768, setIsSmallThan768] = useState(window.innerWidth < 768);
+
+
+    const handleResize = () => {
+        setIsSmallThan768(window.innerWidth < 768);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {window.removeEventListener('resize', handleResize);};
+    }, []);
     return (
-        <div class="ReraDisclaimer" style={{ width: "70%", position: "fixed", top: "10%", left: "14%", backgroundColor: "rgba(0,0,0,0.89)", padding: "25px", borderRadius: "8px" }} >
+        
+        <div class="ReraDisclaimer" style={{ width: isSmallThan768 ? "80%" : "70%", position: "fixed", top: isSmallThan768? "5%" : "10%", left: isSmallThan768 ? "4%" : "14%", backgroundColor: "rgba(0,0,0,0.89)", padding: "25px", borderRadius: "8px", zIndex:"22" }} >
             <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <span style={{ color: "white",width: "55%", fontSize:"16px", display: "flex", justifyContent: "flex-end", alignItems: "center" }}>RERA DISCLAIMER</span>
+                <span style={{ color: "white",width: "55%", fontFamily:"serif", fontSize:"16px", display: "flex", justifyContent: "flex-end", alignItems: "center",fontFamily:"sans-serif", }}>RERA DISCLAIMER</span>
                 <span style={{ color: "white", width: "45%", fontSize: "16px", display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
                     <button onClick={() => closeDisclaimer1(false)} style={{ backgroundColor: "transparent", border: "none", color: "white", fontSize: "22px" }} s>x</button>
                 </span>
 
             </div>
-            <p style={{ color: "white", marginBottom: "10px", letterSpacing: "0.5px", lineHeight: "1.5" }}>The Real Estate (Regulation and Development) Act, 2016 has been introduced and the rules and regulations notified thereunder ("RERA") on 1st May 2017. The process of updating our website is being initiated to ensure full compliance with the law.
+            <p style={{ color: "white", fontFamily:"sans-serif", fontSize: isSmallThan768? "10px" : "12px", fontWeight: "300", marginBottom: "10px", letterSpacing: "0.5px", lineHeight: isSmallThan768?  "" :"1.5" }}>The Real Estate (Regulation and Development) Act, 2016 has been introduced and the rules and regulations notified thereunder ("RERA") on 1st May 2017. The process of updating our website is being initiated to ensure full compliance with the law.
                 <br />
                 <br />
                 The advertisements available on the website were created prior to RERA came into force and thus contains/may contain promotional material related to future phases of the project. The offerings outlined in those advertisements in whatever form may not be a part of the initial phase of the project and may be delivered in later phases or on completion of the Project.

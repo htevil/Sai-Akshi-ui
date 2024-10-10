@@ -6,10 +6,24 @@ import maharera from "../../../asset/maharera.png";
 import bg from "../../../asset/bg.jpg"
 
 export default function Section7() {
-    const [isLargerThan1024, setIsLargerThan1024] = useState(window.innerWidth > 1025);
+    const [isLargerThan1024, setIsLargerThan1024] = useState(window.innerWidth > 1024);
+    const [isSmallThan768, setIsSmallThan768] = useState(window.innerWidth < 768);
+
+    let width = "";
+    // Calculate height based on screen width
+    if (isLargerThan1024) {
+        width = "30%";
+    } else {
+        if (isSmallThan768) {
+            width = "60%";
+        } else {
+            width = "40%";
+        }
+    }
 
     const handleResize = () => {
-        setIsLargerThan1024(window.innerWidth > 1025);
+        setIsLargerThan1024(window.innerWidth > 1024);
+        setIsSmallThan768(window.innerWidth < 768);
     };
 
     useEffect(() => {
@@ -29,10 +43,10 @@ export default function Section7() {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Sai Akshi Location Map"
                 ></iframe>
-                <div style={{ width: isLargerThan1024 ? "30%" : "40%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "12px", border: "2px solid #FF9800", padding: "20px 30px", animation:"m2 linear", animationTimeline:"view()", animationRange:"entry 0%"}} >
-                    <div style={{ display: "flex", textAlign: "center", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "20px", marginBottom: "15px" }}>
+                <div style={{ width, height: "fit-content", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "12px", border: "2px solid #FF9800", padding: "20px 30px", animation:"m2 linear", animationTimeline:"view()", animationRange:"entry 0%"}} >
+                    <div style={{ display: "flex", textAlign: "center", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: isSmallThan768? "10px" : "20px", marginBottom: isSmallThan768? "5px" : "15px" }}>
                         <span style={{ fontSize: "24px", fontWeight: "600", color: "#FF9800" }}>Enquire Now</span>
-                        <span style={{ fontSize: "16px", fontWeight: "400", color: "white" }}>Please fill your details below</span>
+                        <span style={{ fontSize: isSmallThan768? "14px" : "16px", fontWeight: "400", color: "white" }}>Please fill your details below</span>
                     </div>
                     <form style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "12px", margin: "8px 0px" }}>
                         <input type="text" className="username" name="name" placeholder="Name*" style={{ width: "92%", padding: "10px", borderRadius: "5px", fontSize: "16px" }} />
@@ -44,14 +58,14 @@ export default function Section7() {
                             <option value="2 BHK">2 BHK</option>
                             <option value="3 BHK">3 BHK</option>
                         </select>
-                        <input type="button" name="submit" value="Submit" style={{ padding: "10px 20px", border: "none", borderRadius: "5px", backgroundColor: "#FF9800", marginTop:"5px", fontSize:"16px", fontWeight:"600", color:"#ffffff" }} />
+                        <input type="button" name="submit" value="Submit" style={{ padding: "10px 20px", border: "none", borderRadius: "5px", backgroundColor: "#FF9800", marginTop:"5px", fontSize: "16px", fontWeight:"600", color:"#ffffff" }} />
                     </form>
 
-                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", fontSize: "14px" }}>
-                        <img src={gps1} style={{ width: '25px', marginRight: '5px' }} alt="no_gps1" />
-                        <span style={{ color: "white" }}> <b style={{ color: "#FF9800" }}>Site Address:</b> Kokan Nagar, Bhandup West, Mumbai, Maharashtra 400078</span>
+                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", fontSize: isSmallThan768? "12px" : "14px", }}>
+                        <img src={gps1} style={{ width: isSmallThan768? "22px" : '24px', marginRight: isSmallThan768? "" : '5px' }} alt="no_gps1" />
+                        <span style={{ color: "white" }}><b style={{ color: "#FF9800" }}>Site Address: </b>Kokan Nagar, Bhandup West, Mumbai, Maharashtra 400078</span>
                     </div>
-                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", fontSize: "14px" }}>
+                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", fontSize: isSmallThan768? "12px" : "14px", textAlign:"justify" }}>
                         <img src={qr} style={{ width: '25px', marginRight: '5px', zIndex: 9, cursor: 'pointer' }} alt="no_qr" data-toggle="modal" data-target="#rera-gr" />
                         <img src={maharera} style={{ width: '25px', marginRight: '5px' }} alt="no_maharera" />
                         <span style={{ color: "white" }}><b style={{ color: "#FF9800" }}>MahaRERA Registration No: </b> P51800030330</span>

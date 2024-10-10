@@ -30,7 +30,7 @@ export default function EnquireNow({ closeEnquireNow }) {
                     <option value="2 BHK">2 BHK</option>
                     <option value="3 BHK">3 BHK</option>
                 </select>
-                <input type="button" name="submit" value="Submit" style={{ padding: "6px 12px", borderRadius: "6px", border: "none" }} />
+                <input type="button" name="submit" value="Submit" style={{ padding: "8px 16px", color:"#ffffff", fontWeight:"500", borderRadius: "6px", border: "none", backgroundColor:"#000000" }} />
             </form>
             <span style={{ fontSize: "12px", textAlign: "center" }}>
                 By submitting details, I agree and authorize Sai Akshi to contact me. This will override the registry with DNC/NDNC.
