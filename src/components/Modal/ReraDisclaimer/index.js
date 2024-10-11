@@ -18,7 +18,7 @@ export default function ReraDisclaimer({ closeDisclaimer1 }) {
         
         <div class="ReraDisclaimer" style={{ width: isSmallThan768 ? "80%" : "70%", position: "fixed", top: isSmallThan768? "5%" : "10%", left: isSmallThan768 ? "4%" : "14%", backgroundColor: "rgba(0,0,0,0.89)", padding: "25px", borderRadius: "8px", zIndex:"22" }} >
             <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <span style={{ color: "white",width: "55%", fontFamily:"serif", fontSize:"16px", display: "flex", justifyContent: "flex-end", alignItems: "center",fontFamily:"sans-serif", }}>RERA DISCLAIMER</span>
+                <span style={{ color: "white",width: "55%", fontSize:"16px", display: "flex", justifyContent: "flex-end", alignItems: "center",fontFamily:"sans-serif" }}>RERA DISCLAIMER</span>
                 <span style={{ color: "white", width: "45%", fontSize: "16px", display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
                     <button onClick={() => closeDisclaimer1(false)} style={{ backgroundColor: "transparent", border: "none", color: "white", fontSize: "22px" }} s>x</button>
                 </span>

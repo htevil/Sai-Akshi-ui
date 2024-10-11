@@ -12,7 +12,7 @@ export default function Section4() {
         height = "70vh";
     } else {
         if (isSmallThan768) {
-            width = "90%";
+            width = "80%";
             height = "25vh";
         } else {
             width = "80%";
@@ -31,8 +31,8 @@ export default function Section4() {
     }, []);
 
     return (
-        <div className="view" id="Walkthrough" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px, 0px"}}>
-            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 10% cover" }}>
+        <div className="view" id="Walkthrough" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px"}}>
+            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 10% cover", marginBottom:"20px" }}>
                 <h1 className="heading" style={{ fontSize: isSmallThan768? "28px" : "32px", color: "#FF9800" }}>Walkthrough</h1>
             </div>
             <div className="down-part" style={{ width:"100%", display: "flex", justifyContent: "center", alignItems: "center", animation: "h2 linear", animationTimeline: "view()", animationRange: "entry 0% " }}>

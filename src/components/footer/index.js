@@ -22,11 +22,11 @@ export default function Footer() {
 
     return (
         <div className="footer" style={{ fontSize: isSmallThan768? "10px" : "14px", padding: "5px 0px" }}>
-            <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap:  isSmallThan768? "1px" : "5px" }}>
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap:  isSmallThan768? "2px" : "5px", fontSize: isSmallThan768? "8px" : "14px" }}>
                 <span>All rights are reserved</span> <span>|</span>
                 <span>Copyright © 2024 Sai Akshi</span> <span>|</span>
-                <button onClick={() => setOpenDisclaimer1(true)} style={{  fontSize: isSmallThan768? "10px" : "14px",backgroundColor:"transparent", border:"none", color:"blue", padding:"0px", margin:"0px",alignSelf:"self-end"}}>RERA Disclaimer</button> <span>|</span>
-                <button onClick={() => setOpenDisclaimer2(true)} style={{ fontSize: isSmallThan768? "10px" : "14px", backgroundColor:"transparent", border:"none", color:"blue",padding:"0px", margin:"0px",alignSelf:"self-end" }} >Disclaimer</button>
+                <button onClick={() => setOpenDisclaimer1(true)} style={{  fontSize: isSmallThan768? "8px" : "14px",backgroundColor:"transparent", border:"none", color:"blue", padding:"0px", margin:"0px",alignSelf:"self-end"}}>RERA Disclaimer</button> <span>|</span>
+                <button onClick={() => setOpenDisclaimer2(true)} style={{ fontSize: isSmallThan768? "8px" : "14px", backgroundColor:"transparent", border:"none", color:"blue",padding:"0px", margin:"0px",alignSelf:"self-end" }} >Disclaimer</button>
                 {/* <span className="bn_key_span">Powered By <a href="https://www.brandniti.com"><img src="images/bn_key.png" className="bn_key" alt="" /></a></span> */}
             </div>
             {openDisclaimer1 && <ReraDisclaimer closeDisclaimer1={setOpenDisclaimer1} />}

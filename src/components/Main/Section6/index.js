@@ -16,17 +16,17 @@ export default function Section6() {
 
 
     return (
-        <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#D9EDBF" }}>
+        <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#D9EDBF", padding:"20px" }}>
             <div className="view" id="About-Developer" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                 <div >
-                    <h1 className="heading" style={{ fontSize: isSmallThan768? "28px" :"32px", color: "#FF9800" }}>About Developer</h1>
+                    <h1 className="heading" style={{ fontSize: isSmallThan768? "28px" :"32px", color: "#FF9800", marginBottom:"10px" }}>About Developer</h1>
                 </div>
 
-                <div className="top-part" style={{animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 0%"  }}>
+                <div className="top-part" style={{animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 0%", marginBottom:"10px"  }}>
                     <img src={uvklogo} alt="no-uvklogo" style={{ width: isSmallThan768? "120px" : "140px"}} />
                 </div>
 
-                <div className="down-part" style={{ fontSize: isSmallThan768? "12px" :"16px", width:"70%", display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center", letterSpacing: isSmallThan768? "" : "0.2px", lineHeight: "1.5", marginBottom: "20px",animation: "h2 linear", animationTimeline: "view()", animationRange: "entry 0%" }}>
+                <div className="down-part" style={{ fontSize: isSmallThan768? "12px" :"16px", width:"70%", display: 'flex', flexDirection: "column", justifyContent: "center", alignItems: "center", gap:"10px", letterSpacing: isSmallThan768? "" : "0.2px", lineHeight: "1.5",animation: "h2 linear", animationTimeline: "view()", animationRange: "entry 0%", marginBottom:"5px" }}>
                     <p style={{ color: "#2C7865", fontWeight: "500", textAlign:"justify" }} >
                         UVK Group is one of the prominent real estate groups based in Mumbai, Maharashtra. Formed in 2010, our group's core business is the development of residential and commercial projects catering to Redevelopment Projects, Slum Rehabilitation Projects, and other Housing Projects in and around Mumbai. We specialize in building sustainable projects with superior quality and elegance. We have the core expertise and technical know-how that helps in executing projects in a better way.
                     </p>

@@ -57,14 +57,14 @@ export default function Section2() {
     }, []);
 
     return (
-        <div className="view" id="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginBottom: "40px" }}>
-            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 0%" }}>
+        <div className="view" id="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px" }}>
+            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 0%", marginBottom: "20px", }}>
                 <h1 className="heading" style={{ fontSize: isSmallThan768? "28px" : "32px", color: "#2C7865" }}>Amenities</h1>
             </div>
-            <div className="down-part" style={{ width:"80%", display: "grid", gridTemplateColumns, gridColumnGap: "20px", gridRowGap: isSmallThan768? "30px" : "60px" }}>
+            <div className="down-part" style={{ width: isSmallThan768? "70%" : "80%", display: "grid", gridTemplateColumns, gridColumnGap: "20px", gridRowGap: isSmallThan768? "30px" : "60px" }}>
                 {
                     value.map((item, index) => (
-                        <div className="block" key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center", padding: isSmallThan768? "15px" : "20px", border: "1px solid #ddd", borderRadius: "8px", fontSize: isSmallThan768? "12px" : "16px", backgroundColor: "#FF9800", color: "white", animation: "m3 linear", animationTimeline: "view()", animationRange: "entry 0%" }}>
+                        <div className="block" key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center", padding: isSmallThan768? "15px" : "20px", border: "1px solid #ddd", borderRadius: "8px", fontSize: isSmallThan768? "14px" : "16px", backgroundColor: "#FF9800", color: "white", animation: "m3 linear", animationTimeline: "view()", animationRange: "entry 0%" }}>
                             {item}
                         </div>
                     ))

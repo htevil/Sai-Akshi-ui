@@ -21,9 +21,9 @@ export default function EnquireNow({ closeEnquireNow }) {
                 </span>
             </div>
             <form style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "12px", margin: "10px" }}>
-                <input type="text" name="name" placeholder="Name*" style={{ width: "94%", padding: "8px", borderRadius: "4px", border: "none" }} />
-                <input type="text" name="email" placeholder="Email*" style={{ width: "94%", padding: "8px", borderRadius: "4px", border: "none" }} />
-                <input type="text" name="mobile" placeholder="Mobile*" style={{ width: "94%", padding: "8px", borderRadius: "4px", border: "none" }} />
+                <input type="text" name="name" placeholder="Name*" style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
+                <input type="text" name="email" placeholder="Email*" style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
+                <input type="text" name="mobile" placeholder="Mobile*" style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
                 <select name="info" defaultValue="" style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }}>
                     <option value="" disabled>Select Configuration</option>
                     <option value="1 BHK">1 BHK</option>

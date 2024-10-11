@@ -12,7 +12,7 @@ export default function Section5() {
         width = "35%"
     } else {
         if (isSmallThan768) {
-            width = "75%"
+            width = "80%"
         } else {
             width = "50%"
         }
@@ -29,11 +29,11 @@ export default function Section5() {
     }, []);
     return (
         <div className="view" id="Location-Advantages" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin:"20px 0px" }}>
-            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 10% cover"}}>
+            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 10% cover", marginBottom:"20px"}}>
                 <h1 className="heading" style={{ fontSize: isSmallThan768? "28px" :"32px", color: "#2C7865" }}>Location Advantages</h1>
             </div>
 
-            <div className="down-part" style={{ display: "flex", flexDirection: isLargerThan1024 ? "row" : "column", justifyContent: "center", alignItems: "center", gap: isLargerThan1024 ? "10px": "20px"}}>
+            <div className="down-part" style={{ display: "flex", flexDirection: isLargerThan1024 ? "row" : "column", justifyContent: "center", alignItems: "center", gap: isLargerThan1024 ? "40px": "20px"}}>
                 <div className="main-left" style={{ width}} >
                     <img src={location} alt="no-location" style={{ width: "100%", border: "none", borderRadius: "4px", animation: "m1 linear", animationTimeline: "view()", animationRange: "entry 0%" }} />
                 </div>
@@ -41,7 +41,7 @@ export default function Section5() {
                     <p>
                         The project has easy access to public transport. The locality houses all the required basic necessities like banks, ATMs, malls, grocers, schools, hospitals, temples, mosques, etc.
                     </p>
-                    <ul style={{ listStyleType: 'disc' }}>
+                    <ul style={{ listStyleType: 'disc', marginLeft: "20px" }}>
                         <style>
                             {`
                             ul li::marker {

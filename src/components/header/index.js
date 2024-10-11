@@ -10,19 +10,15 @@ export default function Header() {
     const [isSmallThan768, setIsSmallThan768] = useState(window.innerWidth < 768);
 
     let height = "";
-    let right = "";
 
     // Calculate height based on screen width
     if (isLargerThan1024) {
         height = "85vh";
-        right = "-3.5%"
     } else {
         if (isSmallThan768) {
-            height = "60vh";
-            right = "-12%";
+            height = "50vh";
         } else {
-            height = "70vh"; 
-            right = "-5%"
+            height = "70vh";
         }
     }
 
@@ -70,7 +66,7 @@ export default function Header() {
                 <div
                     style={{
                         position: "fixed",
-                        right,
+                        right:"-50px",
                         top: "25%",
                         transform: "translateY(-50%) rotate(-90deg)",
                         cursor: "pointer",
