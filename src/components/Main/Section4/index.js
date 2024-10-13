@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+
 export default function Section4() {
     const [isLargerThan1024, setIsLargerThan1024] = useState(window.innerWidth > 1024);
     const [isSmallThan768, setIsSmallThan768] = useState(window.innerWidth < 768);
@@ -43,7 +44,7 @@ export default function Section4() {
                     className="walk_iframe"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                    style={{ width, height, border: "none" }}>
+                    style={{ width, height, maxHeight:"500px", border: "none" }}>
                 </iframe>
             </div>
         </div>
