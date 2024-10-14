@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Sai-Akshi-ui/static/css/main.7901fcd3.css",
-    "main.js": "/Sai-Akshi-ui/static/js/main.30b6ef5f.js",
+    "main.js": "/Sai-Akshi-ui/static/js/main.ef86f25d.js",
     "static/js/453.56a02543.chunk.js": "/Sai-Akshi-ui/static/js/453.56a02543.chunk.js",
     "static/media/desktop.jpg": "/Sai-Akshi-ui/static/media/desktop.d8a3d61fe7276ffad2f9.jpg",
     "static/media/elevation.jpg": "/Sai-Akshi-ui/static/media/elevation.032a03cc96227a66507c.jpg",
@@ -17,11 +17,11 @@
     "static/media/uvk-logo.png": "/Sai-Akshi-ui/static/media/uvk-logo.7b6540f6855229675bf9.png",
     "index.html": "/Sai-Akshi-ui/index.html",
     "main.7901fcd3.css.map": "/Sai-Akshi-ui/static/css/main.7901fcd3.css.map",
-    "main.30b6ef5f.js.map": "/Sai-Akshi-ui/static/js/main.30b6ef5f.js.map",
+    "main.ef86f25d.js.map": "/Sai-Akshi-ui/static/js/main.ef86f25d.js.map",
     "453.56a02543.chunk.js.map": "/Sai-Akshi-ui/static/js/453.56a02543.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7901fcd3.css",
-    "static/js/main.30b6ef5f.js"
+    "static/js/main.ef86f25d.js"
   ]
 }
