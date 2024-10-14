@@ -22,7 +22,7 @@ export default function Section7() {
         return () => { window.removeEventListener('resize', handleResize); };
     }, []);
 
-    const { register, formState: { errors }, handleSubmit, reset, clearErrors } = useForm({mode: "onChange",});
+    const { register, formState: { errors }, handleSubmit, reset, clearErrors } = useForm({ mode: "onChange", });
 
     const onSubmit = (data) => {
         console.log(data);  // Log data as object
@@ -50,7 +50,7 @@ export default function Section7() {
                         <span style={{ fontSize: isSmallThan768 ? "18px" : "24px", fontWeight: "600", color: "#FF9800" }}>Enquire Now</span>
                         <span style={{ fontSize: isSmallThan768 ? "14px" : "16px", fontWeight: "400", color: "white" }}>Please fill your details below</span>
                     </div>
-                    <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: isLargerThan1024? "20px" : "10px", margin: "5px 10px 10px 10px", padding: isSmallThan768 ? "0px 10px" : "0px 20px" }}>
+                    <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: isLargerThan1024 ? "20px" : "10px", margin: "5px 10px 10px 10px", padding: isSmallThan768 ? "0px 10px" : "0px 20px" }}>
                         <input
                             type="text"
                             className="username"
@@ -59,8 +59,8 @@ export default function Section7() {
                             {...register("name", { required: true, pattern: /^[a-zA-Z\s]+$/i })}
                             style={{ width: "100%", padding: "10px", borderRadius: "5px", fontSize: "16px" }}
                         />
-                        {errors.name?.type === "required" && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500"  }} >- Name is required</span>}
-                        {errors.name && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500"  }}>- Name must be letters only</span>}
+                        {errors.name?.type === "required" && <span style={{ color: "red", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Name is required</span>}
+                        {errors.name && errors.name?.type !== "required" && <span style={{ color: "red", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Name must be letters only</span>}
 
                         <input
                             type="text"
@@ -69,12 +69,13 @@ export default function Section7() {
                             placeholder="Email*"
                             {...register("email", {
                                 required: true,
-                                pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i,
+                                pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i
                             })}
                             style={{ width: "100%", padding: "10px", borderRadius: "5px", fontSize: "16px" }}
                         />
-                        {errors.email?.type === "required" && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500"  }} >- Email is required</span>}
-                        {errors.email && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500"  }}>- Entered email is in wrong format</span>}
+                        {errors.email?.type === "required" && <span style={{ color: "red", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Email is required</span>}
+                        {errors.email && errors.email?.type !== "required" && <span style={{ color: "red", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Entered email is in wrong format</span>}
+
 
                         <input
                             type="number"
@@ -86,14 +87,13 @@ export default function Section7() {
                                 minLength: 10,
                                 maxLength: 10,
                             })}
-                            style={{ width: "100%", padding: "10px", borderRadius: "5px", fontSize: "16px", lineHeight:"0", fontWeight: "500" }}
+                            style={{ width: "100%", padding: "10px", borderRadius: "5px", fontSize: "16px", lineHeight: "0", fontWeight: "500" }}
                         />
-                        {errors.mobile?.type === "required" && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500"  }} >- Mobile is required</span>}
-                        {errors.mobile && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500" }}>- Mobile number must be 10 digits</span>}
-
+                        {errors.mobile?.type === "required" && <span style={{ color: "red", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Mobile is required</span>}
+                        {errors.mobile && errors.mobile?.type !== "required" && <span style={{ color: "red", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Mobile number must be 10 digits</span>}
                         <select
                             name="configure"
-                            defaultValue="" 
+                            defaultValue=""
                             className="form-control"
                             {...register("configure", { required: true })}
                             style={{ width: "100%", padding: "10px", borderRadius: "5px" }}
@@ -103,8 +103,7 @@ export default function Section7() {
                             <option value="2 BHK">2 BHK</option>
                             <option value="3 BHK">3 BHK</option>
                         </select>
-                        {errors.configure?.type === "required" && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500" }} >- Select any configuration</span>}
-                        {errors.configure && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500" }}>- Configuration is required</span>}
+                        {errors.configure?.type === "required" && <span style={{ color: "red", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Select any configuration</span>}
 
                         <input
                             type="submit"
@@ -128,12 +127,12 @@ export default function Section7() {
 
 
                 {modalVisible && (
-                <div style={{ position: 'fixed', top: '10%', left: '50%', width:isSmallThan768? "300px":"400px" , transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(0,0,0,0.8)', padding: '20px', borderRadius: '10px', zIndex: 1000, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign:"center" }}>
-                    <h2 style={{ fontSize: isSmallThan768? "16px" : "20px", marginBottom: "10px", color: "#fff",width:"100%" }}>Form Submitted Successfully!</h2>
-                    <button onClick={() => setModalVisible(false)} 
+                    <div style={{ position: 'fixed', top: '10%', left: '50%', width: isSmallThan768 ? "300px" : "400px", transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(0,0,0,0.8)', padding: '20px', borderRadius: '10px', zIndex: 1000, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
+                        <h2 style={{ fontSize: isSmallThan768 ? "16px" : "20px", marginBottom: "10px", color: "#fff", width: "100%" }}>Form Submitted Successfully!</h2>
+                        <button onClick={() => setModalVisible(false)}
                             style={{ padding: '10px 20px', borderRadius: '5px', backgroundColor: '#FF9800', color: 'white', fontWeight: 'bold' }}>Close</button>
-                </div>
-            )}
+                    </div>
+                )}
             </div>
         </div>
     );
