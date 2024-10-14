@@ -67,7 +67,7 @@ export default function EnquireNow({ closeEnquireNow }) {
                            {...register("name", { required: true, pattern: /^[a-zA-Z\s]+$/i })} 
                            style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
                     {errors.name?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "600" }} >- Name is required</span>}
-                    {errors.name && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%",lineHeight:"0.2", fontWeight: "600" }}>- Name should not contain numbers or special characters</span>}
+                    {errors.name && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%",lineHeight:"0.2", fontWeight: "600" }}>- Name must be letters only</span>}
                     
                     <input type="text" name="email" placeholder="Email*" 
                            {...register("email", { required: true, pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i })} 

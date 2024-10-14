@@ -60,7 +60,7 @@ export default function Section7() {
                             style={{ width: "100%", padding: "10px", borderRadius: "5px", fontSize: "16px" }}
                         />
                         {errors.name?.type === "required" && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500"  }} >- Name is required</span>}
-                        {errors.name && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500"  }}>- Name should not contain numbers or special characters</span>}
+                        {errors.name && <span style={{ color: "red", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "500"  }}>- Name must be letters only</span>}
 
                         <input
                             type="text"
