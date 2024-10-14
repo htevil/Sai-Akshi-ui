@@ -78,9 +78,9 @@ export default function Header() {
                         style={{
                             border: "none",
                             borderRadius: "5px",
-                            padding: "8px 20px 12px 20px",
+                            padding: isSmallThan768?  "5px 12px 12px 12px": "8px 20px 12px 20px",
                             backgroundColor: "#FF9800",
-                            fontSize: "16px",
+                            fontSize: isSmallThan768? "16px" : "14px",
                             color: "white",
                         }}
                     >

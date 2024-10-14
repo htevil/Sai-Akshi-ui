@@ -24,13 +24,13 @@ export default function EnquireNow({ closeEnquireNow }) {
         }, 400); // Adjust the timeout to match animation duration
     };
 
-    const { register, formState: { errors }, handleSubmit, reset, clearErrors } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset, clearErrors } = useForm({mode: "onChange"});
     
     const onSubmit = (data) => {
-        console.log(data);  // Log data as object
-        setModalVisible(true);  // Show success modal
-        reset();  // Reset the form
-        clearErrors();  // Clear validation errors
+        console.log(data);
+        setModalVisible(true);
+        reset();
+        clearErrors();
     };
 
     return (
@@ -41,7 +41,7 @@ export default function EnquireNow({ closeEnquireNow }) {
                      maxWidth: "320px", 
                      position: "fixed", 
                      right: "20px", 
-                     top: isSmallThan768 ? "20%" : "45%", 
+                     top: isSmallThan768 ? "20%" : "30%", 
                      display: "flex", 
                      flexDirection: "column", 
                      justifyContent: "center", 
@@ -66,20 +66,20 @@ export default function EnquireNow({ closeEnquireNow }) {
                     <input type="text" name="name" placeholder="Name*" 
                            {...register("name", { required: true, pattern: /^[a-zA-Z\s]+$/i })} 
                            style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
-                    {errors.name?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%" }} >Name is required</span>}
-                    {errors.name && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%" }}>Name should not contain numbers or special characters</span>}
+                    {errors.name?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "600" }} >- Name is required</span>}
+                    {errors.name && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%",lineHeight:"0.2", fontWeight: "600" }}>- Name should not contain numbers or special characters</span>}
                     
                     <input type="text" name="email" placeholder="Email*" 
                            {...register("email", { required: true, pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i })} 
                            style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
-                    {errors.email?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%" }} >Email is required</span>}
-                    {errors.email && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%" }}>Entered email is in wrong format</span>}
+                    {errors.email?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "600"  }} >- Email is required</span>}
+                    {errors.email && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight:"0.2", fontWeight: "600"  }}>- Entered email is in wrong format</span>}
                     
                     <input type="text" name="mobile" placeholder="Mobile*" 
                            {...register("mobile", { required: true, minLength: 10, maxLength: 10 })} 
                            style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
-                    {errors.mobile?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%" }} >Mobile is required</span>}
-                    {errors.mobile && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%" }}>Mobile number must be 10 digits</span>}
+                    {errors.mobile?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "600"  }} >- Mobile is required</span>}
+                    {errors.mobile && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight:"0.2", fontWeight: "600"  }}>- Mobile number must be 10 digits</span>}
                     
                     <select name="configure" defaultValue=""  
                             {...register("configure", { required: true })} 
@@ -89,8 +89,8 @@ export default function EnquireNow({ closeEnquireNow }) {
                         <option value="2 BHK">2 BHK</option>
                         <option value="3 BHK">3 BHK</option>
                     </select>
-                    {errors.configure?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%" }} >Select any configuration</span>}
-                    {errors.configure && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%" }}>Configuration is required</span>}
+                    {errors.configure?.type === "required" && <span style={{ color: "#000000", fontSize:"10px", textAlign:"left", width:"100%", lineHeight:"0.2", fontWeight: "600"  }} >- Select any configuration</span>}
+                    {errors.configure && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight:"0.2", fontWeight: "600" }}>- Configuration is required</span>}
                     
                     <input type="submit" name="submit" value="Submit" 
                            style={{ padding: "8px 16px", color: "#ffffff", fontWeight: "500", borderRadius: "6px", border: "none", backgroundColor: "#000000" }} />
@@ -102,8 +102,8 @@ export default function EnquireNow({ closeEnquireNow }) {
             
             {modalVisible && (
                 <div style={{ position: 'fixed', top: '10%', left: '50%', width:isSmallThan768? "300px":"500px", transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(0,0,0,0.8)', padding: '20px', borderRadius: '10px', zIndex: 1000, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign:"center" }}>
-                    <h2 style={{ fontSize: isSmallThan768? "16px" : "32px", marginBottom: "10px", color: "#fff",width:"100%" }}>Form Submitted Successfully!</h2>
-                    <button onClick={() => setModalVisible(false)} 
+                    <h2 style={{ fontSize: isSmallThan768? "16px" : "20px", marginBottom: "10px", color: "#fff",width:"100%" }}>Form Submitted Successfully!</h2>
+                    <button onClick={() => {setModalVisible(false); handleEnquireNow()}} 
                             style={{ padding: '10px 20px', borderRadius: '5px', backgroundColor: '#FF9800', color: 'white', fontWeight: 'bold' }}>Close</button>
                 </div>
             )}
