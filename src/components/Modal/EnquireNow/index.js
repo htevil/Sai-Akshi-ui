@@ -63,23 +63,18 @@ export default function EnquireNow({ closeEnquireNow }) {
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}
                     style={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "10px", margin: "10px" }}>
-                    <input type="text" name="name" placeholder="Name*"
-                        {...register("name", { required: true, pattern: /^[a-zA-Z\s]+$/i })}
-                        style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
+                    <input type="text" name="name" placeholder="Name*" {...register("name", { required: true, pattern: /^[a-zA-Z\s]+$/i, minLength: 3 })} style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
                     {errors.name?.type === "required" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Name is required</span>}
-                    {errors.name && errors.name?.type !== "required" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Name must be letters only</span>}
+                    {errors.name?.type === "pattern" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Name must contain letters only</span>}
+                    {errors.name?.type === "minLength" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Name must be at least 3 characters long</span>}
 
-                    <input type="text" name="email" placeholder="Email*"
-                        {...register("email", { required: true, pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i })}
-                        style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
+                    <input type="text" name="email" placeholder="Email*" {...register("email", { required: true, pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/i })} style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
                     {errors.email?.type === "required" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Email is required</span>}
-                    {errors.email && errors.email?.type !== "required" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Entered email is in wrong format</span>}
+                    {errors.email?.type === "pattern" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Entered email is in wrong format</span>}
 
-                    <input type="text" name="mobile" placeholder="Mobile*"
-                        {...register("mobile", { required: true, minLength: 10, maxLength: 10 })}
-                        style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
-                    {errors.mobile?.type === "required" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Mobile is required</span>}
-                    {errors.mobile && errors.mobile?.type !== "required" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- Mobile number must be 10 digits</span>}
+                    <input type="text" name="mobile" placeholder="Mobile*" {...register("mobile", { required: true, pattern: /^[6-9]\d{9}$/ })} style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "none" }} />
+                    {errors.mobile?.type === "required" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- number is required</span>}
+                    {errors.mobile?.type === "pattern" && <span style={{ color: "#000000", fontSize: "10px", textAlign: "left", width: "100%", lineHeight: "0.2", fontWeight: "500" }}>- number is invalid</span>}
 
                     <select name="configure" defaultValue=""
                         {...register("configure", { required: true })}
