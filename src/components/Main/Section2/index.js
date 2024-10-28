@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
-export default function Section2() {
+import React, {  useState, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
-    let value = [
+export default function Section2() {
+    const value = [
         "Wooden Flooring in Master Bedroom",
         "Air Conditioner in Master Bedroom",
         "Terrace Garden",
@@ -33,18 +36,12 @@ export default function Section2() {
 
     const [isLargerThan1024, setIsLargerThan1024] = useState(window.innerWidth > 1024);
     const [isSmallThan768, setIsSmallThan768] = useState(window.innerWidth < 768);
-
-    let gridTemplateColumns = "";
-
-    if (isLargerThan1024) {
-        gridTemplateColumns = "repeat(3, 1fr)";
-    } else {
-        if (isSmallThan768) {
-            gridTemplateColumns = "repeat(1, 1fr)";
-        } else {
-            gridTemplateColumns = "repeat(2, 1fr)"; 
-        }
-    }
+    
+    const gridTemplateColumns = isLargerThan1024 
+        ? "repeat(3, 1fr)" 
+        : isSmallThan768 
+            ? "repeat(1, 1fr)" 
+            : "repeat(2, 1fr)";
 
     const handleResize = () => {
         setIsLargerThan1024(window.innerWidth > 1024);
@@ -53,18 +50,51 @@ export default function Section2() {
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
-        return () => { window.removeEventListener('resize', handleResize); };
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const refs = useRef(value.map(() => React.createRef()));
+
+    useEffect(() => {
+        refs.current.forEach((ref, index) => {
+            const el = ref.current;
+            if (el) {
+                gsap.fromTo(el, 
+                    { opacity: 0, scale: 0.95, y: 20 }, 
+                    { 
+                        opacity: 1,
+                        scale: 1,
+                        y: 0, 
+                        duration: 0.5, 
+                        scrollTrigger: { 
+                            trigger: el, 
+                            start: "top 80%", 
+                            markers: false,  
+                            end: "top 50%", 
+                            toggleActions: "play none none reverse" 
+                        } 
+                    }
+                );
+            }
+        });
     }, []);
 
     return (
         <div className="view" id="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px" }}>
-            <div className="top-part" style={{ animation: "h1 linear", animationTimeline: "view()", animationRange: "entry 0%", marginBottom: "20px", }}>
-                <h1 className="heading" style={{ fontSize: isSmallThan768? "28px" : "32px", color: "#2C7865" }}>Amenities</h1>
+            <div className="top-part" style={{ marginBottom: "20px" }}>
+                <h1 className="heading" style={{ fontSize: isSmallThan768 ? "28px" : "32px", color: "#2C7865" }}>Amenities</h1>
             </div>
-            <div className="down-part" style={{ width: isSmallThan768? "70%" : "80%", display: "grid", gridTemplateColumns, gridColumnGap: "20px", gridRowGap: isSmallThan768? "30px" : "60px" }}>
+            <div className="down-part" style={{ width: isSmallThan768 ? "70%" : "80%", display: "grid", gridTemplateColumns, gridColumnGap: "20px", gridRowGap: isSmallThan768 ? "30px" : "60px" }}>
                 {
                     value.map((item, index) => (
-                        <div className="block" key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center", padding: isSmallThan768? "15px" : "20px", border: "1px solid #ddd", borderRadius: "8px", fontSize: isSmallThan768? "14px" : "16px", backgroundColor: "#FF9800", color: "white", animation: "m3 linear", animationTimeline: "view()", animationRange: "entry 0%" }}>
+                        <div 
+                            className="block" 
+                            ref={refs.current[index]} 
+                            key={index} 
+                            style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: "center", padding: isSmallThan768 ? "15px" : "20px", border: "1px solid #ddd", borderRadius: "8px", fontSize: isSmallThan768 ? "14px" : "16px", backgroundColor: "#FF9800", color: "white",boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)" }}
+                        >
                             {item}
                         </div>
                     ))
