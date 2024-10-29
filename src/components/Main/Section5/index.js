@@ -40,48 +40,52 @@ export default function Section5() {
         if (el) {
             gsap.fromTo(el, 
                 { opacity: 0, y: -20 }, 
-                { opacity: 1, y: 0, duration: 1, scrollTrigger: { trigger: el, start: "top 80%", end: "top 70%", toggleActions: "play none none reverse" } }
+                { opacity: 1, y: 0, duration: 0.8, scrollTrigger: { trigger: el, start: "top 80%", end: "top 70%", toggleActions: "play none none reverse" } }
             );
         }
 
         const el1 = ref1.current;
         if (el1) {
             gsap.fromTo(el1, 
-                { opacity: 0, x: -100 }, 
-                { opacity: 1, x: 0, duration: 0.8, scrollTrigger: { trigger: el1, start: "top 50%", end: "top 30%", toggleActions: "play none none reverse" } }
+                { opacity: 0, x: -40 }, 
+                { opacity: 1, x: 0, duration: 0.8, scrollTrigger: { trigger: el1, start: "top 60%", end: "top 50%", toggleActions: "play none none reverse" } }
             );
         }
 
         const el2 = ref2.current;
         if (el2) {
             gsap.fromTo(el2, 
-                { opacity: 0, x: 100 }, 
-                { opacity: 1, x: 0, duration: 0.8, scrollTrigger: { trigger: el2, start: "top 60%", end: "top 30%", toggleActions: "play none none reverse" } }
+                { opacity: 0, x: 40 }, 
+                { opacity: 1, x: 0, duration: 0.8, scrollTrigger: { trigger: el2, start: "top 60%", end: "top 50%", toggleActions: "play none none reverse" } }
             );
         }
 
         // Adding stagger effect for list items
         const listItems = ref3.current.children;
         gsap.fromTo(listItems, 
-            { opacity: 0, y: 20 }, 
+            { opacity: 0, x: 30 }, 
             { 
                 opacity: 1, 
-                y: 0, 
-                duration: 0.8, 
+                x: 0, 
+                duration: 0.5, 
                 stagger: 0.2, // Adjust stagger duration here
                 scrollTrigger: { 
                     trigger: ref3.current, 
-                    start: "top 50%", 
-                    end: "top 30%", 
+                    start: "top 60%", 
+                    end: "top 50%", 
                     toggleActions: "play none none reverse" 
                 } 
             }
         );
 
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+
     }, []);
 
     return (
-        <div className="view" id="Location-Advantages" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px" }}>
+        <div className="view" id="Location-Advantages" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px 40px 0px" }}>
             <div className="top-part" ref={ref} style={{ marginBottom: "20px" }}>
                 <h1 className="heading" style={{ fontSize: isSmallThan768 ? "28px" : "32px", color: "#2C7865" }}>Location Advantages</h1>
             </div>

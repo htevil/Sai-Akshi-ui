@@ -1,6 +1,7 @@
-import React, {  useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Section2() {
@@ -55,36 +56,44 @@ export default function Section2() {
         };
     }, []);
 
+    const ref = useRef();
     const refs = useRef(value.map(() => React.createRef()));
 
     useEffect(() => {
-        refs.current.forEach((ref, index) => {
-            const el = ref.current;
+        const el = ref.current;
+        if (el) {
+            gsap.fromTo(el, 
+                { opacity: 0, y: -20 }, 
+                { opacity: 1, y: 0, duration: 0.8, scrollTrigger: { trigger: el, start: "top 80%", end: "top 70%", toggleActions: "play none none reverse" } }
+            );
+        }
+
+        refs.current.forEach((ref) => {
+            const el = ref.current; // Use the ref directly
             if (el) {
-                gsap.fromTo(el, 
-                    { opacity: 0, scale: 0.95, y: 20 }, 
-                    { 
-                        opacity: 1,
-                        scale: 1,
-                        y: 0, 
-                        duration: 0.5, 
-                        scrollTrigger: { 
-                            trigger: el, 
-                            start: "top 80%", 
-                            markers: false,  
-                            end: "top 50%", 
-                            toggleActions: "play none none reverse" 
-                        } 
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%", // Adjust as needed
+                        end: "top 50%",
+                        toggleActions: "play none none reverse",
+                        markers: false, // Set to true for debugging
                     }
-                );
+                })
+                .fromTo(el, { opacity: 0, y: 40 }, { opacity: 0.8, y: -5, duration: 0.5 }) // Mimic 0% to 50%
+                .to(el, { opacity: 1, y: 0, duration: 0.2 }); // Final state
             }
         });
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
     }, []);
 
     return (
-        <div className="view" id="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px" }}>
+        <div className="view" id="Amenities" style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "20px 0px 60px " }}>
             <div className="top-part" style={{ marginBottom: "20px" }}>
-                <h1 className="heading" style={{ fontSize: isSmallThan768 ? "28px" : "32px", color: "#2C7865" }}>Amenities</h1>
+                <h1 className="heading" ref={ref} style={{ fontSize: isSmallThan768 ? "28px" : "32px", color: "#2C7865" }}>Amenities</h1>
             </div>
             <div className="down-part" style={{ width: isSmallThan768 ? "70%" : "80%", display: "grid", gridTemplateColumns, gridColumnGap: "20px", gridRowGap: isSmallThan768 ? "30px" : "60px" }}>
                 {

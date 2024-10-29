@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, {  useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import './index.css';
@@ -31,8 +31,9 @@ export default function Plans() {
     };
   }, []);
 
+
   return (
-    <div className="plans" id="Plans" style={{ width: "100%", backgroundColor: "#D9EDBF", padding: "20px 40px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+    <div className="plans" id="Plans" style={{ width: "100%", backgroundColor: "#D9EDBF", padding: "40px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
       <div style={{ width: "100%", maxWidth: "1560px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
         <h1 className="heading" id='h3' style={{ fontSize: isSmallThan768? "28px" : "32px", color: "#FF9800", marginBottom:"10px" }}>Our Plans</h1>
           <Swiper
